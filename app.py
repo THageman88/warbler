@@ -109,15 +109,14 @@ def login():
     return render_template('users/login.html', form=form)
 
 
-@app.route('/logout')
+@app.route("/logout")
 def logout():
     """Handle logout of user."""
 
-    # IMPLEMENT THIS
+    do_logout()
 
-
-##############################################################################
-# General user routes:
+    flash("Nobody likes a quiter, You have logged out", 'success')
+    return redirect("/login")
 
 @app.route('/users')
 def list_users():
